@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book besøg — Chikult</title>
+  <link rel="icon" type="image/png" href="assets/chikult logo lille.PNG" />
+  <meta name="description" content="Book besøg på en af Chikults gårde og mød hønsene i virkeligheden." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- HEADER -->
+    <header class="header">
+    <div class="container header-content">
+        <a href="index.html" class="logo-link" style="text-decoration: none;">
+        <div class="logo-area">
+            <img src="img/chikult logo.png" alt="Chikult logo" class="logo" />
+            <h1 class="site-title">Chikult</h1>
+        </div>
+        </a>
+        <nav class="nav-menu" aria-label="Hovedmenu">
+        <ul>
+            <li><a href="index.html#hero">Forside</a></li>
+            <li><a href="bestilling.html">Bestil</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+            <li class="extra"><a href="os.html">Om os</a></li>
+            <li class="extra"><a href="book.html">Book besøg</a></li>
+            <li class="extra"><a href="stoet.html" aria-current="page">Støt os</a></li>
+            <li class="extra"><a href="index.html#sponsorer">Sponsorer</a></li>
+        </ul>
+        </nav>
+    </div>
+    </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" style="background:url('img/hero-book.jpg') center/cover no-repeat; color:#004444;">
+      <div class="container">
+        <h2>Book et gårdbesøg</h2>
+        <p>Kom og oplev atmosfæren, mød hønsene og se hvordan vi arbejder med dyrevelfærd.</p>
+      </div>
+    </section>
+
+    <!-- BOOKINGFORMULAR -->
+    <section id="book-form">
+      <div class="container">
+        <h2>Bookingformular</h2>
+        <form method="POST" action="https://formsubmit.co/u1989927708@gmail.com">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Ny gårdbooking via Chikult" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://mrhaumann.github.io/Chikult/" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" />
+
+          <label for="farm">Vælg gård</label>
+          <select id="farm" name="farm" required>
+            <option value="">Vælg gård</option>
+            <option value="Solstråle (Odense)">Solstråle (Odense)</option>
+            <option value="Enghave (Mors)">Enghave (Mors)</option>
+            <option value="Hønsebo (Randers)">Hønsebo (Randers)</option>
+          </select>
+
+          <label for="date">Dato</label>
+          <input type="date" id="date" name="date" required />
+
+          <label for="time">Tidspunkt</label>
+          <input type="time" id="time" name="time" required />
+
+          <label for="guests">Antal personer</label>
+          <input type="number" id="guests" name="guests" min="1" required />
+
+          <label for="name">Navn</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="notes">Bemærkninger</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Fx særlige ønsker, grupper eller institutioner"></textarea>
+
+          <label>
+            <input type="checkbox" name="consent" required />
+            Jeg accepterer, at I må kontakte mig vedr. bookingen
+          </label>
+
+          <button type="submit" class="btn primary">Send booking</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section>
+      <div class="container">
+        <h2>Praktisk info</h2>
+        <p>
+          Besøg er gratis og tager ca. 30–60 minutter. Du får mulighed for at hilse på hønsene, se faciliteterne
+          og stille spørgsmål til gårdens daglige drift.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Chikult</p>
+    </div>
+  </footer>
+
+  <!-- Toast element -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

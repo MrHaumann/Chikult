@@ -1,0 +1,5 @@
+  --font-family: 'Nunito', sans-serif;
+  --primary-color: #4CAF50;
+  --secondary-color: #ffffff;
+  --text-color: #333;
+  --farm-image-size: 200px;

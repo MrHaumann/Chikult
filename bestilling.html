@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chikult — Bestil høns, haner og kyllinger</title>
+  <link rel="icon" type="image/png" href="assets/chikult logo lille.PNG" />
+  <meta name="description" content="Bestil høns, haner eller kyllinger fra Chikult med afhentning eller levering." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body class="bestilling-side">
+  <!-- HEADER -->
+    <header class="header">
+    <div class="container header-content">
+        <a href="index.html" class="logo-link" style="text-decoration: none;">
+        <div class="logo-area">
+            <img src="img/chikult logo.png" alt="Chikult logo" class="logo" />
+            <h1 class="site-title">Chikult</h1>
+        </div>
+        </a>
+        <nav class="nav-menu" aria-label="Hovedmenu">
+        <ul>
+            <li><a href="index.html#hero">Forside</a></li>
+            <li><a href="bestilling.html">Bestil</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+            <li class="extra"><a href="os.html">Om os</a></li>
+            <li class="extra"><a href="book.html">Book besøg</a></li>
+            <li class="extra"><a href="stoet.html" aria-current="page">Støt os</a></li>
+            <li class="extra"><a href="index.html#sponsorer">Sponsorer</a></li>
+        </ul>
+        </nav>
+    </div>
+    </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" style="background:url('img/hero-hoens.jpg') center/cover no-repeat; color:rgb(0, 102, 102);">
+      <div class="container">
+        <h2>Bestil dine høns</h2>
+        <p>Vælg type og afhentningssted — eller få dem leveret hjem til dig.</p>
+      </div>
+    </section>
+
+    <!-- BESTILLINGSFORMULAR -->
+    <section id="bestil">
+      <div class="container">
+        <h2>Bestillingsformular</h2>
+
+        <!-- Brug samme FormSubmit som i index -->
+        <form id="order-form" method="POST" action="https://formsubmit.co/u1989927708@gmail.com" novalidate>
+          <!-- FormSubmit-opsætning -->
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Ny bestilling via Chikult — Bestillingsformular" />
+          <input type="hidden" name="_template" value="table" />
+          <!-- Ret denne til din egen tak-side, fx tak.html -->
+          <input type="hidden" name="_next" value="https://mrhaumann.github.io/Chikult/" />
+          <!-- Simpelt anti-bot felt (honeypot) -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <!-- PRODUKTVALG -->
+          <label for="product">Type</label>
+          <select id="product" name="product" required>
+            <option value="">Vælg type</option>
+            <option value="Høne">Høne</option>
+            <option value="Hane">Hane</option>
+            <option value="Kylling">Kylling</option>
+          </select>
+
+          <label for="quantity">Antal</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" required />
+
+          <!-- LEVERING -->
+          <fieldset>
+            <legend>Levering</legend>
+            <label>
+              <input type="radio" name="fulfilment" value="Afhentning" checked />
+              Afhentning
+            </label>
+            <label>
+              <input type="radio" name="fulfilment" value="Levering" />
+              Levering
+            </label>
+          </fieldset>
+
+          <div id="pickup-fields">
+            <label for="pickupFarm">Afhentningssted</label>
+            <select id="pickupFarm" name="pickupFarm" required>
+              <option value="Randers">Randers</option>
+              <option value="Odense">Odense</option>
+              <option value="Mors">Mors</option>
+            </select>
+          </div>
+
+          <div id="delivery-fields" style="display:none;">
+            <label for="address">Leveringsadresse</label>
+            <input type="text" id="address" name="address" placeholder="Adresse, postnr. og by" />
+          </div>
+
+          <!-- DATO/TID -->
+          <label for="date">Dato</label>
+          <input type="date" id="date" name="date" required />
+
+          <label for="time">Tid</label>
+          <input type="time" id="time" name="time" required />
+
+          <!-- KUNDEOPLYSNINGER -->
+          <label for="name">Navn</label>
+          <input type="text" id="name" name="name" placeholder="Dit fulde navn" required />
+
+          <label for="phone">Telefon</label>
+          <input type="tel" id="phone" name="phone" placeholder="Dit telefonnummer" required />
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="din@email.dk" required />
+
+          <label for="notes">Bemærkninger</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Skriv evt. noget her"></textarea>
+
+          <label>
+            <input type="checkbox" name="consent" required />
+            Jeg accepterer, at I må kontakte mig
+          </label>
+
+          <button type="submit" class="btn primary">Send bestilling</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- INFOSEKTION -->
+    <section>
+      <div class="container">
+        <h2>Praktisk info</h2>
+        <p>Vi kontakter dig efter bestilling for at aftale afhentning eller levering.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Chikult</p>
+    </div>
+  </footer>
+
+  <!-- Toast (script.js opretter også selv hvis mangler) -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Skift mellem afhentning/levering og håndter required-felter
+    document.addEventListener('DOMContentLoaded', () => {
+      const radios = document.querySelectorAll('input[name="fulfilment"]');
+      const pickup = document.getElementById('pickup-fields');
+      const delivery = document.getElementById('delivery-fields');
+      const address = document.getElementById('address');
+      const pickupFarm = document.getElementById('pickupFarm');
+
+      function updateMode() {
+        const value = document.querySelector('input[name="fulfilment"]:checked')?.value;
+        const isDelivery = value === 'Levering';
+        delivery.style.display = isDelivery ? '' : 'none';
+        pickup.style.display = isDelivery ? 'none' : '';
+        address.toggleAttribute('required', isDelivery);
+        pickupFarm.toggleAttribute('required', !isDelivery);
+      }
+
+      radios.forEach(r => r.addEventListener('change', updateMode));
+      updateMode();
+    });
+  </script>
+</body>
+</html>

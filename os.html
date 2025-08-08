@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Om os — Chikult</title>
+  <link rel="icon" type="image/png" href="assets/chikult logo lille.PNG" />
+  <meta name="description" content="Lær Chikult at kende. Læs om vores vision, gårde og dyrevelfærd." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- HEADER -->
+    <header class="header">
+    <div class="container header-content">
+        <a href="index.html" class="logo-link" style="text-decoration: none;">
+        <div class="logo-area">
+            <img src="img/chikult logo.png" alt="Chikult logo" class="logo" />
+            <h1 class="site-title">Chikult</h1>
+        </div>
+        </a>
+        <nav class="nav-menu" aria-label="Hovedmenu">
+        <ul>
+            <li><a href="index.html#hero">Forside</a></li>
+            <li><a href="bestilling.html">Bestil</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+            <li class="extra"><a href="os.html">Om os</a></li>
+            <li class="extra"><a href="book.html">Book besøg</a></li>
+            <li class="extra"><a href="stoet.html" aria-current="page">Støt os</a></li>
+            <li class="extra"><a href="index.html#sponsorer">Sponsorer</a></li>
+        </ul>
+        </nav>
+    </div>
+    </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" style="background:url('img/gaarde-hero.jpg') center/cover no-repeat; color:#004444;">
+      <div class="container">
+        <h2>Om Chikult</h2>
+        <p>Vi værner om dyrevelfærd, gennemsigtighed og glade høns med plads til at leve.</p>
+      </div>
+    </section>
+
+    <!-- OM OS -->
+    <section id="om">
+      <div class="container">
+        <h2>Vores vision</h2>
+        <p>
+          Hos Chikult handler det hele om frihed, natur og dyrevelfærd. Vi tror på, at kyllinger har ret til et
+          sundt liv med adgang til frisk luft og rigeligt med plads — derfor får hver fugl ca. 4 m² året rundt.
+          Vores kunder er med til at skabe bedre forhold for høns i Danmark.
+        </p>
+        <p>
+          Du er altid velkommen til at besøge vores gårde og selv vælge den fugl, du ønsker. Vi går ind for
+          gennemsigtighed i alt, vi laver.
+        </p>
+      </div>
+    </section>
+
+    <!-- GÅRDE -->
+    <section id="gaarde">
+      <div class="container">
+        <h2>Vores gårde</h2>
+        <div class="farm-list">
+          <div class="farm-card">
+            <img src="assets/Odense_gård.png" alt="Solstråle Gården" />
+            <h3>Solstråle Gården - Odense</h3>
+            <p>En hyggelig gård med masser af plads til hønsene og en venlig atmosfære i hjertet af Odense.</p>
+          </div>
+          <div class="farm-card">
+            <img src="assets/Morsø_gård.png" alt="Enghave" />
+            <h3>Enghave - Mors</h3>
+            <p>Beliggende midt i naturen med store åbne arealer til fri bevægelse og sunde omgivelser.</p>
+          </div>
+          <div class="farm-card">
+            <img src="assets/Randers_gård.png" alt="Hønsebo" />
+            <h3>Hønsebo - Randers</h3>
+            <p>Kendt for sine glade høns og bæredygtige metoder — en gård hvor dyrevelfærd er i højsædet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRAKTISK INFO -->
+    <section>
+      <div class="container">
+        <h2>Besøg og kontakt</h2>
+        <p>
+          Alle gårde modtager besøgende — både private og institutioner. Du kan booke tid via vores
+          <a href="book.html">bookingside</a> eller 
+          <a href="index.html#kontakt">kontakte</a> os direkte. Vi glæder os til at byde dig velkommen.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Chikult — Frie høns med frisk luft</p>
+    </div>
+  </footer>
+
+  <!-- Toast element (hvis JS viser beskeder) -->
+  <div id="toast"></div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

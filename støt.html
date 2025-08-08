@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Støt Chikult</title>
+  <link rel="icon" type="image/png" href="assets/chikult logo lille.PNG" />
+  <meta name="description" content="Støt Chikult ved at sponsorere, donere foder, penge eller høns." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- HEADER -->
+<header class="header">
+  <div class="container header-content">
+    <a href="index.html" class="logo-link" style="text-decoration: none;">
+      <div class="logo-area">
+        <img src="img/chikult logo.png" alt="Chikult logo" class="logo" />
+        <h1 class="site-title">Chikult</h1>
+      </div>
+    </a>
+    <nav class="nav-menu" aria-label="Hovedmenu">
+      <ul>
+        <li><a href="index.html#hero">Forside</a></li>
+        <li><a href="bestilling.html">Bestil</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+        <li class="extra"><a href="os.html">Om os</a></li>
+        <li class="extra"><a href="book.html">Book besøg</a></li>
+        <li class="extra"><a href="støt.html" aria-current="page">Støt os</a></li>
+        <li class="extra"><a href="index.html#sponsorer">Sponsorer</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" style="background:url('img/stot-hero.jpg') center/cover no-repeat; color:#003333;">
+      <div class="container">
+        <h2>Støt Chikult</h2>
+        <p>Vil du hjælpe høns i nød, støtte med foder, penge eller sponsorater? Her kan du gøre en forskel.</p>
+      </div>
+    </section>
+
+    <!-- SPONSORER -->
+    <section id="sponsor" class="container">
+      <h2>Sponsorér som firma</h2>
+      <p>Virksomheder er vigtige for os — I kan støtte os økonomisk, med foder, materialer eller events.</p>
+      <form method="POST" action="https://formsubmit.co/u1989927708@gmail.com">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="Sponsoransøgning fra firma via Chikult" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://mrhaumann.github.io/Chikult/" />
+        <input type="text" name="_honey" style="display:none" />
+
+        <label>Firmanavn:<br><input type="text" name="company" required></label>
+        <label>Kontaktperson:<br><input type="text" name="contact" required></label>
+        <label>Email:<br><input type="email" name="email" required></label>
+        <label>Telefon:<br><input type="tel" name="phone"></label>
+        <label>Hvad vil I sponsorere:<br>
+          <select name="type">
+            <option>Økonomisk støtte</option>
+            <option>Foder</option>
+            <option>Materialer</option>
+            <option>Events</option>
+          </select>
+        </label>
+        <label>Link eller logo-url (valgfrit):<br><input type="url" name="link"></label>
+        <button type="submit" class="btn primary">Ansøg som sponsor</button>
+      </form>
+    </section>
+
+    <!-- DONÉR PENGE -->
+    <section id="donate-money" class="container">
+      <h2>Donér penge</h2>
+      <p>Din støtte går direkte til foder, sundhed, faciliteter og undervisning.</p>
+      <ul>
+        <li><strong>MobilePay:</strong> 112233</li>
+        <li><strong>Bankoverførsel:</strong> Reg: 1234 — Konto: 567890</li>
+      </ul>
+      <p>Har du doneret? Vi sender et tak når vi har registreret din hjælp 💛</p>
+    </section>
+
+    <!-- DONÉR FODER -->
+    <section id="donate-feed" class="container">
+      <h2>Donér foder</h2>
+      <form method="POST" action="https://formsubmit.co/u1989927708@gmail.com">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="Tilbud om foder via Chikult" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://mrhaumann.github.io/Chikult/" />
+        <input type="text" name="_honey" style="display:none" />
+
+        <label>Type foder:<br><input type="text" name="fodertype" required></label>
+        <label>Mængde:<br><input type="text" name="amount"></label>
+        <label>Udløbsdato:<br><input type="date" name="expiry"></label>
+        <label>Afhentning eller levering:
+          <select name="delivery">
+            <option>Jeg leverer</option>
+            <option>Skal afhentes</option>
+          </select>
+        </label>
+        <button type="submit" class="btn primary">Tilbyd foder</button>
+      </form>
+    </section>
+
+    <!-- AFLEVÉR HØNS -->
+    <section id="donate-hens" class="container">
+      <h2>Aflever høns</h2>
+      <p>Har du høns, du ikke længere kan passe? Vi tager dem imod med kærlighed og ansvar.</p>
+      <form method="POST" action="https://formsubmit.co/u1989927708@gmail.com" enctype="multipart/form-data">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="Aflevering af høns via Chikult" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_next" value="https://mrhaumann.github.io/Chikult/" />
+        <input type="text" name="_honey" style="display:none" />
+
+        <label>Antal høns:<br><input type="number" name="count" min="1" required></label>
+        <label>Alder:<br><input type="text" name="age"></label>
+        <label>Sundhedstilstand:<br><textarea name="health"></textarea></label>
+        <label>Billede (valgfrit):<br><input type="file" name="photo"></label>
+        <label>Email for bekræftelse:<br><input type="email" name="email"></label>
+        <button type="submit" class="btn outline">Aflever høne(r)</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Chikult — Frie høns med frisk luft</p>
+    </div>
+  </footer>
+
+  <!-- Toast element -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

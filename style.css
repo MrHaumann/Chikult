@@ -1,0 +1,411 @@
+/* 🌱 BASISVARIABLER & RESET */
+:root {
+  --font-family: 'Nunito', sans-serif;
+  --primary-color: #4CAF50;
+  --secondary-color: #ffffff;
+  --text-color: #333;
+  --farm-image-size: 200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌐 GENERELT */
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #003333;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* 🔗 HEADER & NAVIGATION */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  height: 15vh;
+  padding: 0 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+.header.shrink {
+  height: 10vh;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: clamp(40px, 5vw, 50px);
+  transition: height 0.3s ease;
+}
+
+.site-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  transition: font-size 0.3s ease;
+}
+
+.logo-link {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  opacity: 0.85;
+}
+
+.nav-menu ul,
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a,
+nav a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #0077cc;
+}
+
+.header.shrink .logo {
+  font-size: 1.6rem;
+}
+
+.header.shrink .extra {
+  display: none;
+}
+
+/* 🎯 HERO */
+#hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* 🔘 KNAPPER */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn.primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.btn.primary:hover {
+  background-color: #006666;
+}
+
+.btn.outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+/* 📄 SEKTIONER */
+section {
+  padding: 2rem 0;
+}
+
+.section-text {
+  margin-bottom: 1.5rem;
+}
+
+/* 🚜 GÅRDE */
+.farm-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.farm-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: calc(33% - 2rem);
+  min-width: 250px;
+}
+
+.farm-card img {
+  width: var(--farm-image-size);
+  height: var(--farm-image-size);
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* 🤝 SPONSORER */
+.sponsor-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.sponsor-list li img {
+  width: 220px;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-list li img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* 📬 FORMULAR */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#book-form .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* 📦 LEVERING */
+fieldset {
+  border: none;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+}
+
+fieldset legend {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #004444;
+}
+
+fieldset label {
+  display: inline-block;
+  margin-right: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#pickup-fields,
+#delivery-fields {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* 📝 KONTAKT */
+.kontakt-wrapper {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 60px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  font-family: var(--font-family);
+}
+
+.kontakt-wrapper h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.kontakt-wrapper p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.kontakt-form button {
+  margin-top: 25px;
+  background-color: #006666;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* 🦶 FOOTER */
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 🍞 TOAST */
+#toast {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: #333;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  display: none;
+}
+
+/* 🐔 INTRO */
+.intro-flex {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.intro-text {
+  flex: 1 1 500px;
+}
+
+.intro-pic img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* 📱 RESPONSIVT */
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 1rem 5vw;
+  }
+
+  .site-title {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .nav-menu ul,
+  nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  #hero h2 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  .farm-card {
+    width: 100%;
+  }
+
+  .sponsor-list {
+    gap: 16px;
+  }
+
+  .intro-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-pic img {
+    width: 180px;
+    height: 180px;
+  }
+
+  #book-form .container,
+  .kontakt-wrapper {
+    padding: 1.25rem;
+    margin: 30px auto;
+  }
+} /* ← vigtig: lukker @media */
